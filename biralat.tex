@@ -47,19 +47,26 @@
 \begin{document}
 \maketitle\vspace{-2cm}
 % 1. A diplomaterv feladat tárgya, célkitűzése, időszerűsége.
-
+A \dolgozattipus  ~tárgya és célkitűzései az élvonalbeli természetesnyelv-feldolgozás sajátjai. 2023-ban, amikor a generatív nyelvmodellek teljes iparágakat transzformálnak, kiváltkép értékes az a kompetencia, melyet a szigorló hallgató jelen munkája során - a dolgozat tanúbizonysága szerint - megszerzett.
 
 % 2. A tartalom összefoglalása néhány mondatban.
-
+A \dolgozattipus ~az absztraktív szövegkivonatolás generálási stratégiáit vizsgálja egy magyar nyelvű, és egy többnyelvű nagy nyelvmodellen alkalmazva. A kísérletek eredményei egyediek és érdekesek a szakmai közösség számára is. Az eredmények közérthetőségét azonban nagyban segítené egy, a kísérletek eredményeit összehasonlító táblázat, valamint az eremények kontextusba helyezése és kiértékelése.
 
 % 3. Fejezetenként pár mondat azok tartalmáról / minőségéről / stb.
-
+A bevezetés egy rövid kronológiai összefoglalóval kezdődik, amely tartalmazhatna több referenciát, vagy kevésbé határozott állításokat. A második fejezet a felhasznált szakirodalom egy szeletét hivatott bemutatni. Az alapfogalmak és eljárások bemutatása hiányos, de tekintettel a \dolgozattipus magas szintű mivoltára, akár elnézhető is lenne. Mindazonáltal, ha már van pl. "Backpropagation" al-al-alfejezet, akkor már illő bemutatni magát az algoritmust (nem csak a hibafüggvény számítási módját). Ha már megemlítésre kerül a SGD, akkor minimum hivatkozni kellene egy forrást; de leginkább egy-két mondattal bemutatni a lényegét és a működési elvét. A 2.1.1.6 alfejezetben található hiperparaméterek formális definíciója hiányzik. Ellenben bemutatásra kerülnek rekurrens neurális hálózatok is a 2.1.2 és a 2.1.3 alfejezetekben, amelyek nem kötődnek a szakdolgozat célkitűzéseihez, és nem is kerültek implementálásra a szokdolgozat tárgyát képző kísérletekben. Ezekben az alfejezetben is fellelhetőek olyan állítások, amelyek referenciát vagy legalább egy hiperhivatkozást kívánnának meg.
 
 % 4.a Összefoglaló értékelés generált módon ^_^
 \felepites{2} % 1-3
+Mindazonáltal, a harmadik, egyik legfontosabb fejezet mindössze egy normaoldalnyi szöveget tartalmaz. Ez nem csak formai okokból aggályos, hanem tartalmi szempontból is. Nagyon keveset tudunk meg a tesztelt modellek tanításának körülményeiről. Már az is segített volna, ha a hallgató ide hivatkozza azt a cikket, amelyben publikálásra kerültek a modellek. Ha figyelembe vesszük, hogy a harmadik fejezet több mint felét kitevő HunSum-2 modellek nem képzik tárgyát a szakdolgozatnak, akkor a "Models" fejezet mindössze 9 sorból áll - minimális információ-tartalommal. Hiányzik továbbá a kiértékelő mérőszámok bemutatása és interpretálása (ROUGE, BLEU).
 \stilus{2} % 1-3
+A szakdolgozat rengeteg kísérletet mutat be - szóban. Az implementációs részletek teljesen hiányoznak a munkából. A forráskód hiánya pedig tovább nehezíti az egyes kísérletek megértését és bírálatát.
 \erthetoseg{2} % 1-3
+A szakdolgozat HunSum-1 ként hivatkozza az adatforrást (2.1.8 fejezet), és a kísérletek során vizsgált modelleket is (3.1 fejezet).
 \korrektura{2} % 1-3
+A dolgozat angol nyelven íródott, amely magával hozott nyelvtani és helyesírási hibákat is (Pl.: szórend, hiányzó alany, hiányzó vesszpk, stb.)
+
+
+
 
 % 4.b Szabadszavas összefoglalás: A jelölt milyen képességekről, önállóságról, határozott ítélőképességről stb. tett tanúbizonyságot, valamint milyen mennyiségű munkát végzett?
 
@@ -67,16 +74,69 @@
 % 4.c
 %% Itt jönnek a kérdések ^_^
 \kerdesek{
-    \kerdes{...?}
-    \kerdes{...?}
+    \kerdes{A 2.1.8 sz. alfejezetben encoder-decoder modell került említésre. Feltehetően, ez a modell kerül Bert2Bert-ként feltüntetésre a dolgozat további részeiben. Hogyan használhatóak a BERT modellt alkotó enkóder blokkok dekódolásra? Mitől válnak dekóderré? Mutassa be a Bert2Bert architektúráját!}
+    \kerdes{A 4.1 fejezetben (24. oldal, 2. sor) azt írja a hallgató, hogy több a tesztelésre kiválasztott cikk \emph{nem található meg} a HunSum-1 dataset-ben. Ebből arra lehet következtetni, hogy a többi tesztelésre kiválasztott cikk igen. A többi tesztelésre kiválasztott cikk a HunSum-1 tanító, validációs vagy tesztelésre szánt adatszeletéből származik? Milyen különbségekre lehet számítani egy teszt-adatponton valamint egy, a teszt adatbázisban nem megtalálható cikken történő inferencia között?}
 }
 
 % 5.a Végső összegzés ^_^
-\osszessegeben{2} % 1-3
+\osszessegeben{3} % 1-3
 
 % 5.b A bírálat tartalmazzon javaslatot a diplomaterv elfogadására vagy elutasítására ^_^
 \elfogadas{igen} % igen/nem
 
 \alairas
+
+\newpage
+Néhány nyelvtani/helyesírási hiba:
+
+\begin{itemize}
+
+\item Page 1, Line 52:
+Error: Incorrect use of "it's" (should be "its").
+Corrected: "...NLP’s advancement through its history."
+
+    \item Page 3, Abstract:
+Original:  "It is important to have a competent model in order to reach acceptable results but using the right generational strategies is crucial in achieving the expected outputs."
+Issue: Lack of comma before 'but'.
+
+    \item Page 5, Introduction:
+
+Original: "Natural Language Processing (NLP) has emerged as a groundbreaking field at the intersection of computer science artificial intelligence and linguistics fundamentally changing the way humans interact with machines and information."
+Issue: Missing comma after 'computer science'.
+
+    \item Page 10:
+
+Original: "The 1970s and 1980s witnessed the emergence of statistical approaches to NLP led by advances in machine learning and data availability."
+Issue: Missing comma after 'NLP'.
+    \item Page 12:
+
+Original: "The late 20th century and the early 21st century witnessed a big shift in NLP with the introduction of deep learning."
+Issue: Missing comma after '21st century'.
+
+%missing subject
+    \item Page 10:
+    
+Original: "Throughout my thesis, will explore the methods mentioned above in the hope of
+guiding the models toward generating desired outputs while minimizing unintended"
+Issue: Missing subject 'I will explore'.
+results.
+%word order
+    \item Page 25:
+    
+This to me signals that the model found no logical place for the
+force word so it just put it at the end, making the summary the...
+Issue: Word order.
+
+
+
+
+
+
+
+
+
+
+
+\end{itemize}
 
 \end{document}
